@@ -36,7 +36,8 @@ def create_user(request):
 
     return HttpResponse("Method not allowed", status=405)
 
-def get_user(user_id):
+@csrf_exempt
+def get_user(request,user_id):
     try:
         user = get_object_or_404(User, id=user_id)
         user_data = {

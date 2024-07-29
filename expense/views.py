@@ -213,6 +213,10 @@ def balance_sheet(request, user_id=None):
                         amount_paid
                     ])
                 #Overall Expenses
+                writer.writerow([
+                'Type', 'Expense ID', 'Description', 'Amount', 'Currency', 'Date',
+                'Payer Name', 'Payment Type', 'ParticipantId' ,'ParticipantName' ,'Amount' 
+            ])
                 for expense in overall_expenses['overall_expenses']:
                     for participant in expense['participants']:
                         writer.writerow([
